@@ -1,0 +1,12 @@
+[
+  {"ticker": "AAPL", "exchange": "NASDAQ", "sector": "Tech", "market_cap": 2800000000, "lot_size": 1, "tradable": true},
+  {"ticker": "MSFT", "exchange": "NASDAQ", "sector": "Tech", "market_cap": 2700000000, "lot_size": 1, "tradable": true},
+  {"ticker": "GOOG", "exchange": "NASDAQ", "sector": "Tech", "market_cap": 1900000000, "lot_size": 1, "tradable": true},
+  {"ticker": "AMZN", "exchange": "NASDAQ", "sector": "Tech", "market_cap": 1700000000, "lot_size": 1, "tradable": true},
+  {"ticker": "JPM", "exchange": "NYSE", "sector": "Finance", "market_cap": 400000000, "lot_size": 1, "tradable": true},
+  {"ticker": "BAC", "exchange": "NYSE", "sector": "Finance", "market_cap": 300000000, "lot_size": 1, "tradable": true},
+  {"ticker": "JNJ", "exchange": "NYSE", "sector": "Health", "market_cap": 420000000, "lot_size": 1, "tradable": true},
+  {"ticker": "PFE", "exchange": "NYSE", "sector": "Health", "market_cap": 150000000, "lot_size": 1, "tradable": true},
+  {"ticker": "XOM", "exchange": "NYSE", "sector": "Energy", "market_cap": 350000000, "lot_size": 1, "tradable": true},
+  {"ticker": "CVX", "exchange": "NYSE", "sector": "Energy", "market_cap": 250000000, "lot_size": 1, "tradable": true}
+]

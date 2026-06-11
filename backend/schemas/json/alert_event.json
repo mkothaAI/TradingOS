@@ -1,0 +1,561 @@
+{
+  "$defs": {
+    "AlertRoutingHint": {
+      "properties": {
+        "hint_id": {
+          "minLength": 1,
+          "title": "Hint Id",
+          "type": "string"
+        },
+        "priority": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Priority"
+        },
+        "audience": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Audience"
+        },
+        "urgency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Urgency"
+        },
+        "dedupe_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dedupe Key"
+        },
+        "suppression_hint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Suppression Hint"
+        },
+        "display_hint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Display Hint"
+        },
+        "freshness": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FreshnessEnvelope"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "hint_id"
+      ],
+      "title": "AlertRoutingHint",
+      "type": "object"
+    },
+    "AlertSeverity": {
+      "properties": {
+        "severity_code": {
+          "$ref": "#/$defs/AlertSeverityCode"
+        },
+        "severity_label": {
+          "minLength": 1,
+          "title": "Severity Label",
+          "type": "string"
+        },
+        "severity_rank": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Severity Rank"
+        },
+        "escalation_needed": {
+          "default": false,
+          "title": "Escalation Needed",
+          "type": "boolean"
+        },
+        "freshness": {
+          "$ref": "#/$defs/FreshnessEnvelope"
+        }
+      },
+      "required": [
+        "severity_code",
+        "severity_label",
+        "freshness"
+      ],
+      "title": "AlertSeverity",
+      "type": "object"
+    },
+    "AlertSeverityCode": {
+      "enum": [
+        "info",
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "title": "AlertSeverityCode",
+      "type": "string"
+    },
+    "AlertSourceKind": {
+      "enum": [
+        "monitoring_state",
+        "thesis_breakage_event",
+        "recommendation_block",
+        "other_deterministic_source"
+      ],
+      "title": "AlertSourceKind",
+      "type": "string"
+    },
+    "AlertTrigger": {
+      "properties": {
+        "trigger_id": {
+          "minLength": 1,
+          "title": "Trigger Id",
+          "type": "string"
+        },
+        "condition_id": {
+          "minLength": 1,
+          "title": "Condition Id",
+          "type": "string"
+        },
+        "trigger_type": {
+          "$ref": "#/$defs/AlertTriggerType"
+        },
+        "trigger_basis": {
+          "minLength": 1,
+          "title": "Trigger Basis",
+          "type": "string"
+        },
+        "trigger_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Trigger Value"
+        },
+        "threshold": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Threshold"
+        },
+        "comparison_operator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Comparison Operator"
+        },
+        "evidence_context": {
+          "$ref": "#/$defs/EvidenceContext"
+        },
+        "freshness": {
+          "$ref": "#/$defs/FreshnessEnvelope"
+        }
+      },
+      "required": [
+        "trigger_id",
+        "condition_id",
+        "trigger_type",
+        "trigger_basis",
+        "evidence_context",
+        "freshness"
+      ],
+      "title": "AlertTrigger",
+      "type": "object"
+    },
+    "AlertTriggerType": {
+      "enum": [
+        "threshold_breach",
+        "condition_entered",
+        "condition_crossed",
+        "state_changed",
+        "manual_review_required",
+        "other_trigger"
+      ],
+      "title": "AlertTriggerType",
+      "type": "string"
+    },
+    "EvidenceContext": {
+      "properties": {
+        "ticker": {
+          "minLength": 1,
+          "title": "Ticker",
+          "type": "string"
+        },
+        "analysis_id": {
+          "minLength": 1,
+          "title": "Analysis Id",
+          "type": "string"
+        },
+        "verdict_ref": {
+          "minLength": 1,
+          "title": "Verdict Ref",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "source_links": {
+          "items": {
+            "$ref": "#/$defs/SourceLink"
+          },
+          "title": "Source Links",
+          "type": "array"
+        },
+        "primary_topics": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Primary Topics",
+          "type": "array"
+        },
+        "freshness": {
+          "$ref": "#/$defs/FreshnessEnvelope"
+        },
+        "evidence_window_start": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Window Start"
+        },
+        "evidence_window_end": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Window End"
+        },
+        "provenance_summary": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provenance Summary"
+        },
+        "stale_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stale Reason"
+        }
+      },
+      "required": [
+        "ticker",
+        "analysis_id",
+        "verdict_ref",
+        "freshness"
+      ],
+      "title": "EvidenceContext",
+      "type": "object"
+    },
+    "FreshnessEnvelope": {
+      "properties": {
+        "freshness_label": {
+          "$ref": "#/$defs/FreshnessLabel"
+        },
+        "evidence_timestamp": {
+          "format": "date-time",
+          "title": "Evidence Timestamp",
+          "type": "string"
+        },
+        "received_at": {
+          "format": "date-time",
+          "title": "Received At",
+          "type": "string"
+        },
+        "last_updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Last Updated At"
+        },
+        "delay_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay Seconds"
+        },
+        "staleness_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Staleness Seconds"
+        },
+        "delay_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay Reason"
+        }
+      },
+      "required": [
+        "freshness_label",
+        "evidence_timestamp",
+        "received_at"
+      ],
+      "title": "FreshnessEnvelope",
+      "type": "object"
+    },
+    "FreshnessLabel": {
+      "enum": [
+        "real_time",
+        "delayed",
+        "stale",
+        "snapshot"
+      ],
+      "title": "FreshnessLabel",
+      "type": "string"
+    },
+    "SourceLink": {
+      "properties": {
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "file": {
+          "title": "File",
+          "type": "string"
+        },
+        "line_range": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line Range"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "rule_id",
+        "file"
+      ],
+      "title": "SourceLink",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "alert_id": {
+      "minLength": 1,
+      "title": "Alert Id",
+      "type": "string"
+    },
+    "ticker": {
+      "minLength": 1,
+      "title": "Ticker",
+      "type": "string"
+    },
+    "symbolic_verdict_ref": {
+      "minLength": 1,
+      "title": "Symbolic Verdict Ref",
+      "type": "string"
+    },
+    "source_kind": {
+      "$ref": "#/$defs/AlertSourceKind"
+    },
+    "source_id": {
+      "minLength": 1,
+      "title": "Source Id",
+      "type": "string"
+    },
+    "alert_type": {
+      "minLength": 1,
+      "title": "Alert Type",
+      "type": "string"
+    },
+    "severity": {
+      "$ref": "#/$defs/AlertSeverity"
+    },
+    "trigger": {
+      "$ref": "#/$defs/AlertTrigger"
+    },
+    "routing_hint": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AlertRoutingHint"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "summary": {
+      "minLength": 1,
+      "title": "Summary",
+      "type": "string"
+    },
+    "observed_at": {
+      "format": "date-time",
+      "title": "Observed At",
+      "type": "string"
+    },
+    "evidence_context": {
+      "$ref": "#/$defs/EvidenceContext"
+    },
+    "freshness": {
+      "$ref": "#/$defs/FreshnessEnvelope"
+    },
+    "requires_review": {
+      "title": "Requires Review",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "alert_id",
+    "ticker",
+    "symbolic_verdict_ref",
+    "source_kind",
+    "source_id",
+    "alert_type",
+    "severity",
+    "trigger",
+    "summary",
+    "observed_at",
+    "evidence_context",
+    "freshness",
+    "requires_review"
+  ],
+  "title": "AlertEvent",
+  "type": "object"
+}

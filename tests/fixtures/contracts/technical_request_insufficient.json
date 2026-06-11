@@ -1,0 +1,9 @@
+{
+  "meta": { "request_id": "22222222-2222-2222-2222-222222222222", "as_of_date": "2026-05-16" },
+  "technical_config": { "atr_window": 14, "ma_windows": [10,50] },
+  "price_series": {
+    "AAPL": [
+      { "date": "2026-05-15", "open": 170.0, "high": 171.0, "low": 169.0, "close": 170.5, "volume": 1000000 }
+    ]
+  }
+}

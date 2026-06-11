@@ -1,0 +1,10 @@
+[
+  {"ticker": "AAPL", "exchange": "NASDAQ", "sector": "Tech", "market_cap": 2800000000, "lot_size": 1, "tradable": true},
+  {"ticker": "XYZ", "exchange": "NASDAQ", "sector": "Tech", "market_cap": 500000, "lot_size": 1, "tradable": false},
+  {"ticker": "ILL1", "exchange": "NASDAQ", "sector": "Tech", "market_cap": 1000000, "lot_size": 0, "tradable": true},
+  {"ticker": "BAC", "exchange": "NYSE", "sector": "Finance", "market_cap": 300000000, "lot_size": 1, "tradable": true},
+  {"ticker": "BAD1", "exchange": "NYSE", "sector": "Finance", "lot_size": 1, "tradable": true},
+  {"ticker": "BAD2", "exchange": "NYSE", "market_cap": 100000000, "lot_size": 1, "tradable": true},
+  {"ticker": "TSM", "exchange": "TSE", "sector": "Tech", "market_cap": 1500000000, "lot_size": 1, "tradable": true},
+  {"ticker": "MSFT", "exchange": "NASDAQ", "sector": "Tech", "market_cap": 2700000000, "lot_size": 1, "tradable": true}
+]

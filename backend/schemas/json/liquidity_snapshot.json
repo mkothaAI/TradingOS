@@ -1,0 +1,375 @@
+{
+  "$defs": {
+    "EvidenceContext": {
+      "properties": {
+        "ticker": {
+          "minLength": 1,
+          "title": "Ticker",
+          "type": "string"
+        },
+        "analysis_id": {
+          "minLength": 1,
+          "title": "Analysis Id",
+          "type": "string"
+        },
+        "verdict_ref": {
+          "minLength": 1,
+          "title": "Verdict Ref",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "source_links": {
+          "items": {
+            "$ref": "#/$defs/SourceLink"
+          },
+          "title": "Source Links",
+          "type": "array"
+        },
+        "primary_topics": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Primary Topics",
+          "type": "array"
+        },
+        "freshness": {
+          "$ref": "#/$defs/FreshnessEnvelope"
+        },
+        "evidence_window_start": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Window Start"
+        },
+        "evidence_window_end": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Window End"
+        },
+        "provenance_summary": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provenance Summary"
+        },
+        "stale_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stale Reason"
+        }
+      },
+      "required": [
+        "ticker",
+        "analysis_id",
+        "verdict_ref",
+        "freshness"
+      ],
+      "title": "EvidenceContext",
+      "type": "object"
+    },
+    "FreshnessEnvelope": {
+      "properties": {
+        "freshness_label": {
+          "$ref": "#/$defs/FreshnessLabel"
+        },
+        "evidence_timestamp": {
+          "format": "date-time",
+          "title": "Evidence Timestamp",
+          "type": "string"
+        },
+        "received_at": {
+          "format": "date-time",
+          "title": "Received At",
+          "type": "string"
+        },
+        "last_updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Last Updated At"
+        },
+        "delay_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay Seconds"
+        },
+        "staleness_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Staleness Seconds"
+        },
+        "delay_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay Reason"
+        }
+      },
+      "required": [
+        "freshness_label",
+        "evidence_timestamp",
+        "received_at"
+      ],
+      "title": "FreshnessEnvelope",
+      "type": "object"
+    },
+    "FreshnessLabel": {
+      "enum": [
+        "real_time",
+        "delayed",
+        "stale",
+        "snapshot"
+      ],
+      "title": "FreshnessLabel",
+      "type": "string"
+    },
+    "LiquidityLabel": {
+      "enum": [
+        "thin",
+        "adequate",
+        "deep"
+      ],
+      "title": "LiquidityLabel",
+      "type": "string"
+    },
+    "SourceLink": {
+      "properties": {
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "file": {
+          "title": "File",
+          "type": "string"
+        },
+        "line_range": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line Range"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "rule_id",
+        "file"
+      ],
+      "title": "SourceLink",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "snapshot_id": {
+      "minLength": 1,
+      "title": "Snapshot Id",
+      "type": "string"
+    },
+    "contract_id": {
+      "minLength": 1,
+      "title": "Contract Id",
+      "type": "string"
+    },
+    "underlying_ticker": {
+      "minLength": 1,
+      "title": "Underlying Ticker",
+      "type": "string"
+    },
+    "bid_size": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Bid Size"
+    },
+    "ask_size": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ask Size"
+    },
+    "spread": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Spread"
+    },
+    "spread_pct": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Spread Pct"
+    },
+    "open_interest": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Open Interest"
+    },
+    "volume": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Volume"
+    },
+    "average_daily_volume": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Average Daily Volume"
+    },
+    "liquidity_label": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/LiquidityLabel"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "freshness": {
+      "$ref": "#/$defs/FreshnessEnvelope"
+    },
+    "evidence_context": {
+      "$ref": "#/$defs/EvidenceContext"
+    }
+  },
+  "required": [
+    "snapshot_id",
+    "contract_id",
+    "underlying_ticker",
+    "freshness",
+    "evidence_context"
+  ],
+  "title": "LiquiditySnapshot",
+  "type": "object"
+}

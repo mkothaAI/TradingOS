@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        #result { margin-top: 20px; padding: 15px; background: #f0f0f0; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h2>Stock Analysis Tool</h2>
+    <form id="analysisForm">
+        <input type="text" id="stockSymbol" placeholder="Enter stock symbol" required>
+        <button type="submit">Analyze</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('analysisForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const symbol = document.getElementById('stockSymbol').value.trim();
+            const resultDiv = document.getElementById('result');
+            
+
+            // Set NO_TRADE default if input is empty
+            if (!symbol) {
+                symbol = 'NO_TRADE';
+                resultDiv.innerHTML = '<div class="error">NO_TRADE selected - trading disabled</div>';
+                return;
+            }
+
+            // Basic validation for stock symbols
+
+            // Enhanced validation: check against valid symbols and format
+            const validSymbols = ['AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA', 'NVDA', 'INTC', 'CSCO', 'ORCL', 'IBM'];
+            if (!validSymbols.includes(symbol) && !/^[A-Za-z]{1,5}$/.test(symbol)) {
+                resultDiv.innerHTML = '<div class="error">Invalid stock symbol - must be one of: ' + validSymbols.join(', ') + '</div>';
+                return;
+            }
+
+            // Simulate API call to backend
+            fetch(`/api/analyze?symbol=${symbol}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Analysis failed');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    resultDiv.innerHTML = `
+                        <strong>Decision:</strong> ${data.decision}<br>
+                        <strong>Reason:</strong> ${data.reason}<br>
+                        <strong>Key Indicators:</strong> ${data.indicators.join(', ')}<br>
+                        <strong>Risk Values:</strong> ${data.riskValues.join(', ')}
+                    `;
+                })
+                .catch(error => {
+                    resultDiv.innerHTML = `<div class="error">${error.message}</div>`;
+                });
+        });
+    </script>
+</body>
+</html>

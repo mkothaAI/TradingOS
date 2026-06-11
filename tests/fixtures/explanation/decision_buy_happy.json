@@ -1,0 +1,6 @@
+{
+  "decision_token": "BUY_CANDIDATE",
+  "reason_codes": [],
+  "size_info": {"allowed_qty": 10},
+  "applied_rules": ["R0001", "R0004"]
+}

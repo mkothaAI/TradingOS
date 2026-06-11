@@ -1,0 +1,138 @@
+{
+  "$defs": {
+    "AlertSeverityCode": {
+      "enum": [
+        "info",
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "title": "AlertSeverityCode",
+      "type": "string"
+    },
+    "FreshnessEnvelope": {
+      "properties": {
+        "freshness_label": {
+          "$ref": "#/$defs/FreshnessLabel"
+        },
+        "evidence_timestamp": {
+          "format": "date-time",
+          "title": "Evidence Timestamp",
+          "type": "string"
+        },
+        "received_at": {
+          "format": "date-time",
+          "title": "Received At",
+          "type": "string"
+        },
+        "last_updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Last Updated At"
+        },
+        "delay_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay Seconds"
+        },
+        "staleness_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Staleness Seconds"
+        },
+        "delay_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay Reason"
+        }
+      },
+      "required": [
+        "freshness_label",
+        "evidence_timestamp",
+        "received_at"
+      ],
+      "title": "FreshnessEnvelope",
+      "type": "object"
+    },
+    "FreshnessLabel": {
+      "enum": [
+        "real_time",
+        "delayed",
+        "stale",
+        "snapshot"
+      ],
+      "title": "FreshnessLabel",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "severity_code": {
+      "$ref": "#/$defs/AlertSeverityCode"
+    },
+    "severity_label": {
+      "minLength": 1,
+      "title": "Severity Label",
+      "type": "string"
+    },
+    "severity_rank": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Severity Rank"
+    },
+    "escalation_needed": {
+      "default": false,
+      "title": "Escalation Needed",
+      "type": "boolean"
+    },
+    "freshness": {
+      "$ref": "#/$defs/FreshnessEnvelope"
+    }
+  },
+  "required": [
+    "severity_code",
+    "severity_label",
+    "freshness"
+  ],
+  "title": "AlertSeverity",
+  "type": "object"
+}

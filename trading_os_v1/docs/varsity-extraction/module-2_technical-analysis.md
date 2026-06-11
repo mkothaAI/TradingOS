@@ -1,0 +1,62 @@
+Module: Module 2_Technical Analysis
+
+Source files used:
+- source/Varsity/2 Technical Analysis/Module 2_Technical Analysis.pdf
+
+Extraction status:
+- status: verified (text extracted)
+- extraction_date: 2026-05-16T03:21:23.162780Z
+- extractor: pdfplumber (text-only extraction)
+
+## Module summary
+Module 2 Technical Analysis
+
+## Chapter-by-chapter notes
+- Detected chapter marker on page 5: is to identify frequent short term trading opportunities which can give you small but consistent profits. 3. Holding Period – Trades based on technical analysis can last anywhere between few minutes and few weeks, and usually not beyond tha
+- Detected chapter marker on page 6: Chapter 3 Introducing Technical Analysis 69 2.1– Overview In the previous chapter we briefly understood what Technical Analysis was all about. In this chapter we will focus on the versatility and the assumptions of Technical Analysis. 2.2 –
+- Detected chapter marker on page 9: considered a positive day else negative. Of course we will deal with this in a greater detail as we progress through the module. The closing price also shows the market sentiment and serves as a reference point for the next day’s trading. F
+- Detected chapter marker on page 10: Module 2 — Technical Analysis Chapter 3 The Chart Types 136 3.1– Overview Having recognized that the Open (O), high (H), low (L), and close (C) serves as the best way to summarize the trading action for the given time period, we need a char
+- Detected chapter marker on page 18: Highest price at Lowest price at The opening The closing Intraday which the stock which the stock price at the price as on Approximately 12 30 traded during the traded during the beginning of the 30th candles per day minutes 30 minute 30 mi
+- Detected chapter marker on page 20: Module 2 — Technical Analysis Chapter 4 Getting Started with Candlesticks 112 4.1 – History tends to repeat itself – The big assumption As mentioned earlier one of the key assumptions in technical analysis is that, we rely on the fact that 
+- Detected chapter marker on page 22: 5. Morning Star 6. Evening Star Of course you must be wondering what these names mean. As I had mentioned in the previous chapter, some of the patterns retain the original Japanese name. Candlestick patterns help the trader develop a comple
+- Detected chapter marker on page 24: Module 2 — Technical Analysis Chapter 5 Single Candlestick patterns (Part 1) 355 5.1 – Overview As the name suggests, a single candlestick pattern is formed by just one candle. So as you can imagine, the trading signal is generated based on
+- Detected chapter marker on page 32: 5.4 – The trade trap Earlier in this chapter we did discuss about the length of the candle. One should avoid trading during an extremely small (below 1% range) or long candle (above 10% range). A small candle indicates subdued trading activ
+- Detected chapter marker on page 33: Module 2 — Technical Analysis Chapter 6 Single Candlestick patterns (Part 2) 136 6.1 – The Spinning Top The spinning top is a very interesting candlestick. Unlike the Marubuzo, it does not give the trader a trading signal with specific entr
+- Detected chapter marker on page 40: So the next time you see either a Spinning top or a Doji individually or in a cluster, remember there is indecision is the market. The market could swing either ways and you need to build a stance that adapts to the expected movement in the
+- Detected chapter marker on page 41: Module 2 — Technical Analysis Chapter 7 Single Candlestick patterns (Part 3) 292 7.1 – Paper Umbrella The paper umbrella is a single candlestick pattern which helps traders in setting up directional trades. The interpretation of the paper u
+- Detected chapter marker on page 50: Here is a chart where both the risk taker and the risk averse would have made a remarkable profit on a trade based on shooting star. Here is an example, where both the risk averse and the risk taker would have initiated the trade based on a
+- Detected chapter marker on page 52: Module 2 — Technical Analysis Chapter 8 Multiple candlestick patterns (Part 1) 360 8.1 – The Engulfing Pattern In a single candlestick pattern, the trader needed just one candlestick to identify a trading opportunity. However when analyzing
+- Detected chapter marker on page 61: HDFC Bank’s stock price should also fall exactly 2%. Probably HDFC Bank stock price may fall by 1.5% or 2.5%. Hence the two stocks may form 2 different (but somewhat similar) candlestick patterns such as a bearish engulfing and dark cloud c
+- Detected chapter marker on page 63: Module 2 — Technical Analysis Chapter 9 Multiple Candlestick Patterns (Part 2) 139 9.1 – The Harami Pattern Before you get thinking, the word ‘Harami’ does not stand for the word harami used in Hindi . Apparently it is old Japanese word for
+- Detected chapter marker on page 68: candle day. In the above example, the risk averse would have avoided the trade completely. The stop loss for the trade would be the highest high between P1 and P2. In this case it would be 129.70. Key takeaways from this chapter 1. The hara
+- Detected chapter marker on page 69: Module 2 — Technical Analysis Chapter 10 Multiple Candlestick Patterns (Part 3) 292 The morning star and the evening star are the last two candlestick patterns we will be studying. Before we understand the morning star pattern, we need to u
+- Detected chapter marker on page 73: 5. On the 3rd day of the pattern (P3), the market opens gap down and progresses into a red candle. The long red candle indicates that the sellers are taking control. The price action on P3 sets the bulls in panic 6. The expectation is that 
+- Detected chapter marker on page 74: The ultimate goal is to understand and recognize the fact that candlesticks are a way of thinking about the markets. You need not know all the patterns. Think about car driving, once you learn how to drive a car, it does not matter which ca
+- Detected chapter marker on page 75: Module 2 — Technical Analysis Chapter 11 The Support and Resistance 301 While discussing candlestick patterns, we had learnt about the entry and the stoploss points, however the target price was not discussed. We will discuss the same in th
+- Detected chapter marker on page 84: Now what if the low of the marubuzo also coincides with a good time tested support? Do you see a remarkable confluence of two technical theories here? We have a double confirmation to go long. Think about it on following terms: 1. A recogni
+- Detected chapter marker on page 86: Module 2 — Technical Analysis Chapter 12 Volumes 307 Volume plays a very integral role in technical analysis as it helps us to confirm trends and patterns. Consider volumes as means to gain insights into how other participants perceive the 
+- Detected chapter marker on page 92: The inference is quite clear – high volumes plus increase in price confirms to us that large influential market participants are positioning themselves to buy the stock. With all three independent variables i.e candlesticks, S&R, and volume
+- Detected chapter marker on page 93: Module 2 — Technical Analysis Chapter 13 Moving Averages 345 We have all learnt about averages in school, moving average is just an extension of that. Moving averages are trend indicators and are frequently used due to their simplicity and 
+- Detected chapter marker on page 106: Needless to say, the MA crossover system can also be applied for intraday trading. For instance one could use the 15 x 30 minutes crossover to identify intraday opportunities. A more aggressive trader could use 5 x 10 minute crossover. You 
+- Detected chapter marker on page 108: Module 2 — Technical Analysis Chapter 14 Indicators (Part 1) 138 If you look at a stock chart displayed on a trader’s trading terminal, you are most likely to see lines running all over the chart. These lines are called the ‘Technical Indic
+- Detected chapter marker on page 114: Finally, do remember RSI is not used often as a standalone indicator by traders, it is used along with other candlestick patterns and indicators to study the market. Key takeaways from this chapter 1. Indicators are independent trading syst
+- Detected chapter marker on page 115: Module 2 — Technical Analysis Chapter 15 Indicators (Part 2) 193 15.1 Moving Average Convergence and Divergence (MACD) The Moving Average Convergence and Divergence (MACD) indicator was developed by Gerald Appel in the late seventies. Trade
+- Detected chapter marker on page 128: With all four checklist points being ticked off I would be very glad to buy Karnataka Bank. Hence I place an order to buy, let us say for 500 shares. However, imagine a situation where the first 3 checklist conditions are met but the 4th co
+- Detected chapter marker on page 130: Module 2 — Technical Analysis Chapter 16 The Fibonacci Retracements 161 The topic on Fibonacci retracements is quite intriguing. To fully understand and appreciate the concept of Fibonacci retracements, one must understand the Fibonacci ser
+- Detected chapter marker on page 136: You can now see the fibonacci retracement levels are calculated and loaded on the chart. Use this information to position yourself in the market. 16.3 – How should you use the Fibonacci retracement levels? Think of a situation where you wan
+- Detected chapter marker on page 137: Module 2 — Technical Analysis Chapter 17 The Dow Theory (Part 1) 82 The Dow Theory has always been a very integral part of technical analysis. The Dow Theory was used extensively even before the western world discovered candlesticks. In fac
+- Detected chapter marker on page 138: The stock market indices discount everything which is known & unknown in the public domain. If a sudden and unexpected event 01 Indices discounts everything occurs, the stock market indices quickly recalibrates itself to reflect the accurat
+- Detected chapter marker on page 141: 17.3 – The Dow Patterns Like in candlesticks, there are few important patterns in Dow Theory as well. The trader can use these patterns to identify trading opportunities. Some of the patterns that we will study are: 1. The Double bottom & D
+- Detected chapter marker on page 143: Key takeaways from this chapter 1. Dow Theory was used in the western world even before candlesticks were formally introduced 2. Dow Theory works on 9 basic tenets 3. Market can be viewed in 3 basic phases – accumulation, mark up, and distr
+- Detected chapter marker on page 144: Module 2 — Technical Analysis Chapter 18 The Dow Theory (Part 2) 91 18.1 – Trading Range The concept of range is a natural extension to the double and triple formation. In a range, the stock attempts to hit the same upper and lower price le
+- Detected chapter marker on page 151: If you follow the checklist mentioned above and completely understand its importance, I can assure you that your trading will improve multiple folds. So the next time you take a trade, ensure you comply with above checklist. If not for anyt
+- Detected chapter marker on page 152: Module 2 — Technical Analysis Chapter 19 The Finale – Helping you get started 458 19.1 – The Charting Software Over the last 18 chapters we have learnt many aspects of Technical Analysis. If you have read through all the chapters and unders
+- Detected chapter marker on page 154: 9. Super Advanced features – Pi has Artificial Intelligence and Genetic Algorithms. These are optimisation tools which helps you optimize your trading algorithms 10. It is free – Zerodha is giving it free of cost to all its active traders T
+- Detected chapter marker on page 160: 9. Use margins effectively, do not over leverage 10. Have a reliable intraday charting software 11. If you sense the day is going wrong, stop trading and move away from your terminal Scalping as a day trading technique requires a great pres
+- Detected chapter marker on page 161: Module 2 — Technical Analysis Chapter 20 Supplementary Notes 1 354 Average Directional Index (ADX) About: The Average Directional Index (ADX), Minus Directional Indicator (-DI) and Plus Directional Indicator (+DI) represent a group of direc
+
+## Open questions / missing material
+- PDF references images or Excel screenshots; images were detected but not captured as structured data. Consider supplying original workbooks or higher-resolution images for precise reproduction.
+
+## Notes on extraction quality
+- Generated from text-only extraction; tables and images may be incomplete.

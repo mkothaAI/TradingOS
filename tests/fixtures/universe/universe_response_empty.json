@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "request_id": "test-empty-123",
+    "as_of_date": "2026-05-16"
+  },
+  "status": "ERROR",
+  "universe_list": [],
+  "universe_stats": {
+    "count": 0,
+    "total_market_cap": 0,
+    "sector_exposures": {}
+  },
+  "errors": [
+    {
+      "code": "UNIVERSE_EMPTY",
+      "message": "No eligible symbols after filters"
+    }
+  ]
+}

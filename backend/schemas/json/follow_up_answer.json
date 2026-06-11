@@ -1,0 +1,368 @@
+{
+  "$defs": {
+    "EvidenceContext": {
+      "properties": {
+        "ticker": {
+          "minLength": 1,
+          "title": "Ticker",
+          "type": "string"
+        },
+        "analysis_id": {
+          "minLength": 1,
+          "title": "Analysis Id",
+          "type": "string"
+        },
+        "verdict_ref": {
+          "minLength": 1,
+          "title": "Verdict Ref",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "source_links": {
+          "items": {
+            "$ref": "#/$defs/SourceLink"
+          },
+          "title": "Source Links",
+          "type": "array"
+        },
+        "primary_topics": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Primary Topics",
+          "type": "array"
+        },
+        "freshness": {
+          "$ref": "#/$defs/FreshnessEnvelope"
+        },
+        "evidence_window_start": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Window Start"
+        },
+        "evidence_window_end": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Window End"
+        },
+        "provenance_summary": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provenance Summary"
+        },
+        "stale_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stale Reason"
+        }
+      },
+      "required": [
+        "ticker",
+        "analysis_id",
+        "verdict_ref",
+        "freshness"
+      ],
+      "title": "EvidenceContext",
+      "type": "object"
+    },
+    "FollowUpAnswerType": {
+      "enum": [
+        "advisory",
+        "refusal",
+        "needs_review"
+      ],
+      "title": "FollowUpAnswerType",
+      "type": "string"
+    },
+    "FollowUpTarget": {
+      "properties": {
+        "target_kind": {
+          "$ref": "#/$defs/FollowUpTargetKind"
+        },
+        "target_name": {
+          "minLength": 1,
+          "title": "Target Name",
+          "type": "string"
+        },
+        "display_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Display Name"
+        },
+        "is_authoritative": {
+          "default": false,
+          "title": "Is Authoritative",
+          "type": "boolean"
+        },
+        "topic_tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Topic Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "target_kind",
+        "target_name"
+      ],
+      "title": "FollowUpTarget",
+      "type": "object"
+    },
+    "FollowUpTargetKind": {
+      "enum": [
+        "advisory_agent",
+        "synthesized_verdict"
+      ],
+      "title": "FollowUpTargetKind",
+      "type": "string"
+    },
+    "FreshnessEnvelope": {
+      "properties": {
+        "freshness_label": {
+          "$ref": "#/$defs/FreshnessLabel"
+        },
+        "evidence_timestamp": {
+          "format": "date-time",
+          "title": "Evidence Timestamp",
+          "type": "string"
+        },
+        "received_at": {
+          "format": "date-time",
+          "title": "Received At",
+          "type": "string"
+        },
+        "last_updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Last Updated At"
+        },
+        "delay_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay Seconds"
+        },
+        "staleness_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Staleness Seconds"
+        },
+        "delay_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Delay Reason"
+        }
+      },
+      "required": [
+        "freshness_label",
+        "evidence_timestamp",
+        "received_at"
+      ],
+      "title": "FreshnessEnvelope",
+      "type": "object"
+    },
+    "FreshnessLabel": {
+      "enum": [
+        "real_time",
+        "delayed",
+        "stale",
+        "snapshot"
+      ],
+      "title": "FreshnessLabel",
+      "type": "string"
+    },
+    "SourceLink": {
+      "properties": {
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "file": {
+          "title": "File",
+          "type": "string"
+        },
+        "line_range": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line Range"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "rule_id",
+        "file"
+      ],
+      "title": "SourceLink",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "answer_id": {
+      "minLength": 1,
+      "title": "Answer Id",
+      "type": "string"
+    },
+    "question_id": {
+      "minLength": 1,
+      "title": "Question Id",
+      "type": "string"
+    },
+    "ticker": {
+      "minLength": 1,
+      "title": "Ticker",
+      "type": "string"
+    },
+    "target": {
+      "$ref": "#/$defs/FollowUpTarget"
+    },
+    "answer_text": {
+      "minLength": 1,
+      "title": "Answer Text",
+      "type": "string"
+    },
+    "answer_type": {
+      "$ref": "#/$defs/FollowUpAnswerType"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "as_of_date": {
+      "format": "date",
+      "title": "As Of Date",
+      "type": "string"
+    },
+    "evidence_context": {
+      "$ref": "#/$defs/EvidenceContext"
+    },
+    "freshness": {
+      "$ref": "#/$defs/FreshnessEnvelope"
+    },
+    "supporting_rule_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Supporting Rule Ids",
+      "type": "array"
+    },
+    "follow_up_summary": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Follow Up Summary"
+    }
+  },
+  "required": [
+    "answer_id",
+    "question_id",
+    "ticker",
+    "target",
+    "answer_text",
+    "answer_type",
+    "generated_at",
+    "as_of_date",
+    "evidence_context",
+    "freshness"
+  ],
+  "title": "FollowUpAnswer",
+  "type": "object"
+}

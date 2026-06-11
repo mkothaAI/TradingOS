@@ -1,0 +1,136 @@
+{
+  "$defs": {
+    "PriceBar": {
+      "properties": {
+        "date": {
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "open": {
+          "title": "Open",
+          "type": "number"
+        },
+        "high": {
+          "title": "High",
+          "type": "number"
+        },
+        "low": {
+          "title": "Low",
+          "type": "number"
+        },
+        "close": {
+          "title": "Close",
+          "type": "number"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Volume"
+        }
+      },
+      "required": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "title": "PriceBar",
+      "type": "object"
+    },
+    "RequestMeta": {
+      "properties": {
+        "request_id": {
+          "title": "Request Id",
+          "type": "string"
+        },
+        "as_of_date": {
+          "format": "date",
+          "title": "As Of Date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "request_id",
+        "as_of_date"
+      ],
+      "title": "RequestMeta",
+      "type": "object"
+    },
+    "TechnicalConfig": {
+      "properties": {
+        "atr_window": {
+          "default": 14,
+          "minimum": 1,
+          "title": "Atr Window",
+          "type": "integer"
+        },
+        "ma_windows": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ma Windows"
+        },
+        "momentum_windows": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Momentum Windows"
+        }
+      },
+      "title": "TechnicalConfig",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "meta": {
+      "$ref": "#/$defs/RequestMeta"
+    },
+    "technical_config": {
+      "$ref": "#/$defs/TechnicalConfig"
+    },
+    "price_series": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/PriceBar"
+        },
+        "type": "array"
+      },
+      "title": "Price Series",
+      "type": "object"
+    }
+  },
+  "required": [
+    "meta",
+    "technical_config",
+    "price_series"
+  ],
+  "title": "TechnicalRequest",
+  "type": "object"
+}
