@@ -1,8 +1,0 @@
-fastapi
-httpx
-numpy
-pandas
-pydantic
-python-dotenv
-scipy
-uvicorn
