@@ -1,6 +1,0 @@
-{
-  "decision_token": "NO_TRADE",
-  "reason_codes": ["FUND_FAIL"],
-  "size_info": null,
-  "applied_rules": ["R0002"]
-}

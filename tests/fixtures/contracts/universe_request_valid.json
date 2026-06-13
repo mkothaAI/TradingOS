@@ -1,8 +1,0 @@
-{
-  "meta": { "request_id": "11111111-1111-1111-1111-111111111111", "as_of_date": "2026-05-16" },
-  "universe_config": { "allowed_markets": ["US"], "sector_caps": {"Technology": 0.3}, "max_universe_size": 100 },
-  "ticker_metadata": [
-    { "ticker": "AAPL", "exchange": "NASDAQ", "sector": "Technology", "market_cap": 2500000000000, "lot_size": 1, "tradable": true },
-    { "ticker": "MSFT", "exchange": "NASDAQ", "sector": "Technology", "market_cap": 2000000000000, "lot_size": 1, "tradable": true }
-  ]
-}

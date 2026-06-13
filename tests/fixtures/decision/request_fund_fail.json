@@ -1,7 +1,0 @@
-{
-  "technical_signals": {"tech_entry": 1},
-  "fundamental_pass": false,
-  "risk_assessment": null,
-  "event_flags": {"blackout": false},
-  "portfolio_state": {"existing_position": false}
-}

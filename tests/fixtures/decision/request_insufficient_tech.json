@@ -1,7 +1,0 @@
-{
-  "technical_signals": {"error": "INSUFFICIENT_HISTORY"},
-  "fundamental_pass": true,
-  "risk_assessment": {"size_info": {"allowed_qty": 10}},
-  "event_flags": {"blackout": false},
-  "portfolio_state": {"existing_position": false}
-}

@@ -1,7 +1,0 @@
-{
-  "technical_signals": {"tech_entry": 0},
-  "fundamental_pass": true,
-  "risk_assessment": {"size_info": {"allowed_qty": 5}},
-  "event_flags": {"blackout": false},
-  "portfolio_state": {"existing_position": true, "position_id": "pos-123", "stop_loss_hit": true}
-}
